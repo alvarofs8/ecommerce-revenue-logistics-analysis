@@ -1,0 +1,7 @@
+data/
+*.csv
+*.tmp
+*.bak
+~*
+.DS_Store
+Thumbs.db
