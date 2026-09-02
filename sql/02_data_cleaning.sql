@@ -3,10 +3,10 @@
 -- Description: Create analytical views, handle nulls, and translate categories.
 -- =============================================================================
 
--- Schema creation for analytics views
+-- 1. Schema creation for analytics views
 CREATE SCHEMA IF NOT EXISTS analytics;
 
--- Cleaning and translating product categories
+-- 2. Cleaning and translating product categories
 CREATE OR REPLACE VIEW analytics.vw_products_clean AS
 SELECT 
     p.product_id,
@@ -19,7 +19,7 @@ FROM public.products p
 LEFT JOIN public.product_category_name_translation pct 
     ON p.product_category_name = pct.product_category_name;
 
--- Cleaning order data
+-- 3. Cleaning order data
 CREATE OR REPLACE VIEW analytics.vw_orders_clean AS
 SELECT 
     order_id,
@@ -35,7 +35,7 @@ FROM public.orders
 WHERE order_status = 'delivered' 
   AND order_delivered_customer_date IS NOT NULL;
 
--- Cleaning and standardizing customer data
+-- 4. Cleaning and standardizing customer data
 CREATE OR REPLACE VIEW analytics.vw_customers_clean AS
 SELECT 
     customer_id,
