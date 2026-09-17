@@ -35,7 +35,15 @@ SELECT
     COALESCE(rfm.customer_segment, 'Unsegmented') AS customer_segment,
     rfm.recency_days,
     rfm.frequency,
-    rfm.monetary
+    rfm.monetary,
+    CASE 
+        WHEN c.customer_state IN ('SP', 'RJ', 'MG', 'ES') THEN 'Southeast'
+        WHEN c.customer_state IN ('PR', 'SC', 'RS') THEN 'South'
+        WHEN c.customer_state IN ('BA', 'PE', 'CE', 'MA', 'PB', 'RN', 'PI', 'AL', 'SE') THEN 'Northeast'
+        WHEN c.customer_state IN ('DF', 'GO', 'MT', 'MS') THEN 'Central-West'
+        WHEN c.customer_state IN ('AM', 'PA', 'RO', 'TO', 'AC', 'AP', 'RR') THEN 'North'
+        ELSE 'Unknown'
+    END AS customer_region
 FROM analytics.vw_customers_clean c
 LEFT JOIN analytics.vw_rfm_segmentation rfm 
     ON c.customer_unique_id = rfm.customer_unique_id;
