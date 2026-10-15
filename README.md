@@ -118,7 +118,7 @@ ecommerce-sales-analytics-sql-powerbi/
 └── README.md                        # Project overview, architecture, and business insights
 ```
 
-## 5. How to Reproduce This Project
+## 5. How to Replicate This Project
 
 1. **Database Setup:**
    * Download the raw CSV files from the Kaggle link provided in `data/README.md`.
