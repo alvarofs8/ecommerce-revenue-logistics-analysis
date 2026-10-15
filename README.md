@@ -30,7 +30,7 @@ Raw transactional tables from Olist were cleaned, standardized, and reshaped int
 * **Dimension Tables (`Dim_Customers`, `Dim_Products`, `Dim_Sellers`, `Dim_Calendar`):** Standardized dimensions connected via one-to-many ($1:*$), single-direction relationships to prevent ambiguous filter propagation.
 * **Centralized Measure Table (`_Measures`):** Dedicated DAX calculation table organized into structured display folders (`01. Financials`, `02. Logistics`, `03. Time Intelligence`).
 
-![Star Schema Data Model](documentation/star_schema_diagram.png)
+![Star Schema Data Model](assets/star_schema_diagram.png)
 
 ### B. Key Architectural Engineering Highlights
 1. **SQL Pushdown Computation vs. DAX Interactivity:**
