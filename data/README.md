@@ -1,6 +1,6 @@
 # Dataset Source: Brazilian E-Commerce Public Dataset by Olist
 
-Due to file size best practices in Git repositories, the raw CSV files (~120 MB uncompressed) are not stored directly in this folder.
+Due to file size best practices in Git repositories, the raw CSV files are not stored directly in this folder.
 
 ## 📥 Official Download Link
 You can download the complete raw dataset directly from Kaggle:
