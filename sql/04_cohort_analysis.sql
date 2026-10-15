@@ -57,9 +57,3 @@ JOIN cohort_sizes cs
     ON oa.cohort_month = cs.cohort_month
 GROUP BY oa.cohort_month, cs.total_cohort_users, oa.month_index
 ORDER BY oa.cohort_month, oa.month_index;
-
-SELECT * 
-FROM analytics.vw_cohort_retention
-WHERE cohort_month BETWEEN '2017-01-01' AND '2017-06-01'
-  AND month_index <= 6
-ORDER BY cohort_month, month_index;
